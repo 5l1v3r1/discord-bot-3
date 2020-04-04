@@ -14,9 +14,10 @@ Free to use, public discord bot with simple moderation features written using No
 
 ## Features:
 1. Moderation
-  1. Ban
-  2. Kick
-  3. Mute/Unmute
-  4. Antispam
-  5. Customizable Blacklist
+  1a. Ban
+  1b. Kick
+  1c. Mute/Unmute
+  1d. Antispam
+  1e. Customizable Blacklist
 2. Display Rules
+
