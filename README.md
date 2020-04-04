@@ -13,11 +13,10 @@ Free to use, public discord bot with simple moderation features written using No
 ![Showcase](https://i.imgur.com/4qMaPrW.gif)
 
 ## Features:
-1. Moderation
-  ⋅⋅1. Ban
-  ⋅⋅2. Kick
-  ⋅⋅3. Mute/Unmute
-  ⋅⋅4. Antispam
-  ⋅⋅5. Customizable Blacklist
-2. Display Rules
+1. Ban
+2. Kick
+3. Mute/Unmute
+4. Antispam
+5. Customizable Blacklist
+6. Display Rules
 
