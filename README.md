@@ -3,6 +3,7 @@ Free to use, public discord bot with simple moderation features written using No
 
 ## Requirements
 `discord.js`        = npm i discord.js
+
 `discord-anti-spam` = npm i discord-anti-spam
 
 ## Usage:
@@ -20,3 +21,7 @@ Free to use, public discord bot with simple moderation features written using No
 5. Customizable Blacklist
 6. Display Rules
 
+## Tasks
+- [ ] Add Customizable Prefix
+- [ ] Add Customizable Rules 
+- [ ] Add Customizable Embeded Messaegs
