@@ -22,6 +22,6 @@ Free to use, public discord bot with simple moderation features written using No
 6. Display Rules
 
 ## Tasks
-- [ ] Add Customizable Prefix
+- [X] Add Customizable Prefix
 - [ ] Add Customizable Rules 
 - [ ] Add Customizable Embeded Messaegs
