@@ -213,7 +213,7 @@ client.on('message', msg => {
     var embed = new discord.MessageEmbed()
       .setTitle('Commands')
       .setColor('0xff0000')
-      .setDescription(`**${prefix}kick** - Kick a member\n**${prefix}ban** - Ban a member\n**${prefix}mute** - Mute a member\n**${prefix}unmute** Unmute a member\n**${prefix}purge** - Purge messages\n**${prefix}addBlacklist** - Add word to blacklist\n**${prefix}rules** - Display the rules`)
+      .setDescription(`**${prefix}kick** - Kick a member\n**${prefix}ban** - Ban a member\n**${prefix}mute** - Mute a member\n**${prefix}unmute** Unmute a member\n**${prefix}purge** - Purge messages\n**${prefix}addBlacklist** - Add word to blacklist\n**${prefix}rules** - Display the rules\n**${prefix}prefix** - Set the bots prefix`)
       .setFooter('Bot coded by SmallDoink#0666');
     msg.channel.send(embed);
   }
