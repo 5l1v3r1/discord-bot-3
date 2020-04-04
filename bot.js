@@ -34,6 +34,7 @@ const spam = new antispam({
 });
 
 var blacklistedWords = ["nigger", "asshole"];
+var prefix = '!';
 
 // Client on ready or when it starts
 client.on('ready', () => {
@@ -54,7 +55,7 @@ client.on('message', msg => {
   if (!msg.guild) return; // If the message isn't in a server, don't reply
 
   // Start of Ban Function
-  if (msg.content.startsWith('!ban')) {
+  if (msg.content.startsWith(`${prefix}ban`)) {
     var user = msg.mentions.users.first();
     if (user) {
       var member = msg.guild.member(user);
@@ -81,7 +82,7 @@ client.on('message', msg => {
   }
 
   // Start of kick function
-  if (msg.content.startsWith('!kick')) {
+  if (msg.content.startsWith(`${prefix}kick`)) {
     var user = msg.mentions.users.first();
     if (user) {
       var member = msg.guild.member(user);
@@ -106,7 +107,7 @@ client.on('message', msg => {
     }
 
   // Start of mute function
-  if (msg.content.startsWith('!mute')) {
+  if (msg.content.startsWith(`${prefix}mute`)) {
     var user = msg.mentions.users.first();
     if (user) {
       var member = msg.guild.member(user);
@@ -128,7 +129,7 @@ client.on('message', msg => {
   }
 
   // Start of unmute function
-  if (msg.content.startsWith('!unmute')) {
+  if (msg.content.startsWith(`${prefix}unmute`)) {
     var user = msg.mentions.users.first();
     if (user) {
       var member = msg.guild.member(user);
@@ -150,7 +151,7 @@ client.on('message', msg => {
   }
 
   // Start of purge function
-  if (msg.content.startsWith('!purge')) {
+  if (msg.content.startsWith(`${prefix}purge`)) {
     var args = msg.content.split(' ').slice(1);
     var amount = args.join('')
 
@@ -185,7 +186,7 @@ client.on('message', msg => {
   }
 
   // Start of add word to blacklist function
-  if (msg.content.startsWith('!addBlacklist')) {
+  if (msg.content.startsWith(`${prefix}addBlacklist`)) {
     var args = msg.content.split(' ').slice(1);
     var word = args.join('')
 
@@ -197,7 +198,7 @@ client.on('message', msg => {
 
 
   // Start of rules function
-  if (msg.content == '!rules') {
+  if (msg.content == `${prefix}rules`) {
     var embed = new discord.MessageEmbed()
       .setTitle('Server Rules')
       .setColor('0xff0000')
@@ -208,17 +209,27 @@ client.on('message', msg => {
   }
 
   // Start of help/commands function
-  if (msg.content == '!help' || msg.content == '!commands') {
+  if (msg.content == `${prefix}help` || msg.content == `${prefix}commands`) {
     var embed = new discord.MessageEmbed()
       .setTitle('Commands')
       .setColor('0xff0000')
-      .setDescription('`!kick` - Kick a member\n`!ban` - Ban a member\n`!mute` - Mute a member\n`!unmute` - Unmute a member\n`!purge` - Purge messages\n`!addBlacklist` - Add word to the blacklist\n`!rules` - Display the rules')
+      .setDescription(`**${prefix}kick** - Kick a member\n**${prefix}ban** - Ban a member\n**${prefix}mute** - Mute a member\n**${prefix}unmute** Unmute a member\n**${prefix}purge** - Purge messages\n**${prefix}addBlacklist** - Add word to blacklist\n**${prefix}rules** - Display the rules`)
       .setFooter('Bot coded by SmallDoink#0666');
     msg.channel.send(embed);
   }
 
+  if (msg.content.startsWith(`${prefix}prefix`)) {
+    var args = msg.content.split(' ').slice(1);
+    var pprefix = args.join('');
+    if (!pprefix) return msg.reply('You must specify a character to prefix');
+    if (!isNaN(word)) return msg.reply('You cannot set the prefix to a integer');
+
+    prefix = pprefix;
+    msg.reply(`Succesfully set the prefix to "${prefix}"`);
+  }
+
   // Just a little fun
-  if (msg.content == '!ping') {
+  if (msg.content == `${prefix}ping`) {
     msg.channel.send('Pong!');
   }
 });
